@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Terraform
+**/.terraform/
+**/.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Build / test output
+dist/
+build/
+coverage/
+*.log
+
+# Security scan reports (generated locally, not committed)
+security-reports/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local AI coding assistant tool state (not project content)
+.claude/
+
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.db
+.venv/
+.ruff_cache/
