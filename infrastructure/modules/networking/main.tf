@@ -10,6 +10,11 @@ terraform {
 
 data "aws_availability_zones" "available" {
   state = "available"
+
+  filter {
+    name   = "zone-id"
+    values = ["use1-az1", "use1-az2"]
+  }
 }
 
 locals {
