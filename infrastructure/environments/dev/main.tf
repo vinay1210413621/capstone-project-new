@@ -53,15 +53,15 @@ module "iam" {
 }
 
 module "ims_service" {
-  source              = "../../modules/ecs-fargate-service"
-  name                = local.name
-  image_url           = "${module.ecr.repository_url}:${var.container_image_tag}"
-  container_port      = var.container_port
-  vpc_id              = module.networking.vpc_id
-  public_subnet_ids   = module.networking.public_subnet_ids
-  private_subnet_ids  = module.networking.private_subnet_ids
-  execution_role_arn  = module.iam.execution_role_arn
-  task_role_arn       = module.iam.task_role_arn
+  source             = "../../modules/ecs-fargate-service"
+  name               = local.name
+  image_url          = "${module.ecr.repository_url}:${var.container_image_tag}"
+  container_port     = var.container_port
+  vpc_id             = module.networking.vpc_id
+  public_subnet_ids  = module.networking.public_subnet_ids
+  private_subnet_ids = module.networking.private_subnet_ids
+  execution_role_arn = module.iam.execution_role_arn
+  task_role_arn      = module.iam.task_role_arn
   environment = {
     PORT = tostring(var.container_port)
   }
